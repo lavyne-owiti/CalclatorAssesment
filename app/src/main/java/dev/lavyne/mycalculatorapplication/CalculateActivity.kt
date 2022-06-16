@@ -20,15 +20,7 @@ class CalculateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculate)
-        tilNumber=findViewById(R.id.tilNumber)
-        tilSecondNumber=findViewById(R.id.tilNumbers)
-        etNumber=findViewById(R.id.etNumber)
-        etTwoNumber=findViewById(R.id.etOneNumber)
-        btnAdd=findViewById(R.id.btnAdd)
-        btnDivide=findViewById(R.id.btnDivide)
-        btnModulus=findViewById(R.id.btnModulus)
-        btnSub=findViewById(R.id.btnSub)
-        tvStatus=findViewById(R.id.tvStatus)
+      castview()
 
         btnAdd.setOnClickListener{
             var output=validation()
@@ -55,6 +47,17 @@ class CalculateActivity : AppCompatActivity() {
                 division(output!!.num1.toInt(),output!!.num2.toInt())
             }
         }
+    }
+    fun castview(){
+        tilNumber=findViewById(R.id.tilNumber)
+        tilSecondNumber=findViewById(R.id.tilNumbers)
+        etNumber=findViewById(R.id.etNumber)
+        etTwoNumber=findViewById(R.id.etOneNumber)
+        btnAdd=findViewById(R.id.btnAdd)
+        btnDivide=findViewById(R.id.btnDivide)
+        btnModulus=findViewById(R.id.btnModulus)
+        btnSub=findViewById(R.id.btnSub)
+        tvStatus=findViewById(R.id.tvStatus)
     }
     data class Myvalidation(var num1:Int,var num2:Int)
      fun validation():Myvalidation?{
