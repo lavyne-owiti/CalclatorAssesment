@@ -58,15 +58,23 @@ class CalculateActivity : AppCompatActivity() {
     }
     data class Myvalidation(var num1:Int,var num2:Int)
      fun validation():Myvalidation?{
+         var error=false
+         tilSecondNumber.error=null
+         tilNumber.error=null
          var num1=etNumber.text.toString()
          var num2=etTwoNumber.text.toString()
           if (num1.isBlank()){
               tilNumber.error="number required"
+              error=true
               return null
           }
          if (num2.isBlank()){
              tilSecondNumber.error="number required"
+             error=true
              return null
+         }
+         if (!error){
+
          }
          return  Myvalidation(num1.toInt(),num2.toInt())
      }
@@ -88,5 +96,3 @@ class CalculateActivity : AppCompatActivity() {
         tvStatus.text="$mod"
     }
 }
-
-
